@@ -8,10 +8,10 @@ Before running the script, set the following variables:
 
 | Variable | Description|
 | --- | --- |
-|GROUP-ID | The ID of the group whose projects you want to export |
-|PRIVATE-TOKEN | GitLab private token with read/write API access |
-|GITLAB-ADDRESS | Your GitLab instance URL |
-|BACKUP-PATH | Directory path where downloaded files will be saved |
+|GROUP_ID | The ID of the group whose projects you want to export |
+|PRIVATE_TOKEN | GitLab private token with read/write API access |
+|GITLAB_ADDRESS | Your GitLab instance URL |
+|BACKUP_PATH | Directory path where downloaded files will be saved |
 |PROJECT_LIST_LENGTH | Set to 0 to read all projects in the group |
 |RECORD_PER_PAGE | Number of records to retrieve per page |
 
