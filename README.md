@@ -22,6 +22,19 @@ chmod +x export_gitlab_projects.sh
 ## Run the script
 ./export_gitlab_projects.sh
 ```
+
+**NOTE**: 
+The script saves the downloaded export files using the value in the EXPORT_FILE_NAME variable by default.  
+If you prefer to save the files using GitLab's default export filenames (as specified in the `Content-Disposition` header), you can do so by:
+
+- **Uncommenting** the curl command that includes the options:
+```
+--remote-name --remote-header-name
+```
+- And **commenting out** the default curl command that uses -o "$EXPORT_FILE_NAME".
+
+This change allows curl to automatically name the files based on the HTTP response headers from GitLab.
+
 **NOTE**: If you're downloading many projects, it's recommended to run the script inside a terminal multiplexer like screen, tmux, or similar tools to avoid interruptions.
 
 ### IMPORTANT NOTE

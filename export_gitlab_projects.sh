@@ -45,9 +45,10 @@ for item in "${PROJECT_LIST[@]}"; do
     done
 
     # Download export
-    EXPORT_FILE_NAME="${P_PATH//\//_}"
     echo $P_ID
+    EXPORT_FILE_NAME="${P_PATH//\//_}"
     curl --request GET "$GITLAB_ADDRESS/api/v4/projects/$P_ID/export/download" --header "PRIVATE-TOKEN: $PRIVATE_TOKEN" -o $EXPORT_DIR_PATH/$EXPORT_FILE_NAME.tar.gz
+    # curl --remote-name --remote-header-name --request GET "$GITLAB_ADDRESS/api/v4/projects/$P_ID/export/download" --header "PRIVATE-TOKEN: $PRIVATE_TOKEN"
     sleep 30
 
 done
